@@ -27,13 +27,14 @@ const TodoItems = () => {
     const dispatch = useDispatch()
     return (
         <>
-            <ul className="list-none w-2/4 flex  flex-col items-center">
-                {todoList.map((todo) => (
+            <ul  className="list-none  w-full flex  flex-col items-center">
+                {todoList.map((todo,index) => (
                     <li
-                        className="mt-4 w-3/4 flex justify-between items-center text-black bg-white px-4 py-1 rounded"
+                        className="mt-4 w-2/4 flex justify-between items-center text-black bg-white px-4 py-1 rounded"
                         key={todo.todoId}
                     >
-                        <div>{todo.todoTitle}</div>
+                        
+                        <div>{ index+1+ ". "+ todo.todoTitle}</div>
                         <button
                             onClick={() => dispatch(removeTodo(todo.todoId))}
                             className="text-white bg-red-700 border-0 py-1 px-4 focus:outline-none hover:bg-red-800 rounded text-md"
